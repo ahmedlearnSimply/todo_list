@@ -9,6 +9,19 @@ class TaskModel extends Equatable {
     required this.isCompleted,
     required this.id,
   });
+
+  TaskModel coptWith({
+    String? title,
+    bool? isCompleted,
+    String? id,
+  }) {
+    return TaskModel(
+      title: title ?? this.title,
+      isCompleted: isCompleted ?? this.isCompleted,
+      id: id ?? this.id,
+    );
+  }
+
   @override
   List<Object> get props => [title, isCompleted, id];
 }
